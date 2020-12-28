@@ -35,3 +35,8 @@ RUN apt update && \
     a2enmod rewrite
 
 EXPOSE 80
+
+RUN apt install sudo -y && \
+    apt update && apt upgrade -y && \
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    apt install ./google-chrome-stable_current_amd64.deb -y
